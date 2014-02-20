@@ -1,4 +1,6 @@
-# React [![Build Status](https://secure.travis-ci.org/ducknorris/react.png)](http://travis-ci.org/ducknorris/react)
+# React [![Build Status](https://travis-ci.org/ducknorris/react.png?branch=master)](https://travis-ci.org/ducknorris/react)
+
+[![Code Climate](https://codeclimate.com/github/ducknorris/react.png)](https://codeclimate.com/github/ducknorris/react)
 
 jQuery plugin that will display custom HTML element on hover over an designated target.
 
@@ -131,5 +133,7 @@ Thanks to our [contributors](https://github.com/ducknorris/react/graphs/contribu
 5. Create new Pull Request
 
 ## Release History
+
+* 0.1.1 - February 20, 2014
 
 * 0.1.0 - February 20, 2014
