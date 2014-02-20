@@ -17,7 +17,8 @@
       var reactableElem;
       reactableElem = $('.reactable-content', elem);
       elem.css({
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       });
       reactableElem.css({
         left: '100%',
@@ -26,21 +27,33 @@
         width: 'auto',
         height: elem.height(),
         overflow: 'hidden',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
+        display: 'none'
       });
     };
     this.reactWithShowHide = function() {
-      elem.hover((function() {
+      elem.hover(function() {
         $('.reactable-content', elem).show();
-      }), function() {
+      }, function() {
         $('.reactable-content', elem).hide();
       });
     };
     this.reactWithSlide = function() {
-      elem.hover((function() {
-        console.log('slide in');
-      }), function() {
-        console.log('slide out');
+      var reactableElem;
+      reactableElem = $('.reactable-content', elem);
+      reactableElem.css({
+        marginLeft: 0,
+        display: 'block'
+      });
+      elem.hover(function() {
+        reactableElem.animate({
+          width: 'auto',
+          marginLeft: '-' + reactableElem.outerWidth() + 'px'
+        }, 300);
+      }, function() {
+        reactableElem.animate({
+          marginLeft: 0
+        }, 50);
       });
     };
     obj.setupSizeAndPosition();
@@ -51,13 +64,9 @@
     }
     elem.addClass('react');
   };
-  $.fn.react = function() {
+  $.fn.react = function(options) {
     return this.each(function(i) {
-      var element;
-      element = $(this);
-      return $('.reactable').each(function() {
-        return new ReactableElement(this, $.react.options);
-      });
+      return new ReactableElement(this, $.react(options));
     });
   };
   $.react = function(options) {
@@ -68,7 +77,3 @@
     fx_type: 'default'
   };
 })(jQuery);
-
-$(function() {
-  return $('.reactable').react();
-});

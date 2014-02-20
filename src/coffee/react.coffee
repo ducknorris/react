@@ -18,6 +18,7 @@
       reactableElem = $('.reactable-content', elem)
       elem.css
         position: 'relative'
+        overflow: 'hidden'
       reactableElem.css
         left: '100%'
         marginTop: '-' + elem.css('paddingTop')
@@ -26,23 +27,33 @@
         height: elem.height()
         overflow: 'hidden'
         whiteSpace: 'nowrap'
+        display: 'none'
       return
 
     @reactWithShowHide = () ->
-      elem.hover (->
+      elem.hover ->
         $('.reactable-content', elem).show()
         return
-      ), ->
+      , ->
         $('.reactable-content', elem).hide()
         return
       return
 
     @reactWithSlide = () ->
-      elem.hover (->
-        console.log 'slide in'
+      reactableElem = $('.reactable-content', elem)
+      reactableElem.css
+        marginLeft: 0
+        display: 'block'
+      elem.hover ->
+        reactableElem.animate
+          width: 'auto'
+          marginLeft: '-' + reactableElem.outerWidth() + 'px'
+        , 300
         return
-      ), ->
-        console.log 'slide out'
+      , ->
+        reactableElem.animate
+          marginLeft: 0
+        , 50
         return
       return
 
@@ -59,12 +70,10 @@
     return
 
   # Collection method.
-  $.fn.react = ->
+  $.fn.react = (options) ->
     return @.each (i) ->
       # Do something reactable to each selected element.
-      element = $(@)
-      $('.reactable').each ->
-        new ReactableElement(@, $.react.options)
+      new ReactableElement(@, $.react(options))
 
   # Static method.
   $.react = (options) ->
@@ -79,7 +88,3 @@
     fx_type: 'default'
 
 )(jQuery)
-
-# Activate reac();
-$ ->
-  $('.reactable').react()
