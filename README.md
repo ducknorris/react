@@ -1,4 +1,4 @@
-# React
+# React [![Build Status](https://secure.travis-ci.org/ducknorris/react.png)](http://travis-ci.org/ducknorris/react)
 
 jQuery plugin that will display custom HTML element on hover over an observed target.
 
@@ -118,13 +118,18 @@ In your web page:
 </html>
 ```
 
-[See demo at this link](https://github.com/ducknorris/react)
+[See demo at this link](http://ducknorris.github.io/react/)
 
-## Documentation
-_(Coming soon)_
+## Contributing
 
-## Examples
-_(Coming soon)_
+Thanks to our [contributors](https://github.com/ducknorris/react/graphs/contributors).
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## Release History
-_(Nothing yet)_
+
+* 0.1.0 - February 20, 2014
