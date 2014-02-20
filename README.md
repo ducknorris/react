@@ -1,4 +1,4 @@
-jquery-react
+jQueryReact
 ============
 
 jQuery plugin that will display custom HTML element on hover over an observed target.
