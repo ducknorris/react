@@ -2,8 +2,8 @@
   "name": "react",
   "title": "React",
   "description": "jQuery plugin that will display custom HTML element on hover over an observed target.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/ducknorris/react",
+  "version": "0.1.1",
+  "homepage": "http://ducknorris.github.io/react/",
   "author": {
     "name": "Catalin Ilinca",
     "email": "c@talin.ro",
@@ -46,7 +46,7 @@
   },
   "keywords": [
     "jquery",
-    "awesome",
+    "hover",
     "react"
   ]
 }
