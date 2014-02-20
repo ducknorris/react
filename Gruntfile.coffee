@@ -75,7 +75,7 @@ module.exports = (grunt)->
         tasks: ["build"]
       test:
         files: ["src/**/*.coffee"]
-        tasks: ["notify:preSpecs", "test", "notify:afterSpecs"]
+        tasks: ["test"]
 
     shell:
       options:
@@ -93,17 +93,6 @@ module.exports = (grunt)->
         ]
         specs: "test/*.spec.js"
       src: "dist/<%= pkg.name %>.js"
-
-    notify:
-      default:
-        options:
-          message: 'Compiled Successfully.'
-      preSpecs:
-        options:
-          message: 'Running specs.'
-      afterSpecs:
-        options:
-          message: 'Specs runned successfully.'
 
     bump:
       options:
@@ -129,14 +118,13 @@ module.exports = (grunt)->
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-shell"
-  grunt.loadNpmTasks "grunt-notify"
 
   # register tasks
   grunt.registerTask "default", ["build"]
   grunt.registerTask "build", ["clean", "coffeelint", "coffee", "concat", "uglify"]
   grunt.registerTask "test", ["build", "jasmine"]
 
-  grunt.registerTask 'travis', ['test']
+  grunt.registerTask 'travis', 'test'
 
   grunt.registerTask "release", "Release a new version, push it and publish it", (target)->
     target = "patch" unless target
