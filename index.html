@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>React by ducknorris</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>React</h1>
+        <h2>jQuery plugin that will display custom HTML element on hover over an observed target.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/ducknorris/react/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ducknorris/react/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ducknorris/react" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="react" class="anchor" href="#react"><span class="octicon octicon-link"></span></a>React</h1>
+
+<p>jQuery plugin that will display custom HTML element on hover over an observed target.</p>
+
+<pre><code>&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="react.min.js"&gt;&lt;/script&gt;
+&lt;style type="text/css"&gt;
+  body {
+    font: 14px/20px Verdana, sans;
+    padding: 0;
+    margin: 0;
+    background: #fbfff0;
+  }
+
+  .wrapper a {
+    color: #fff;
+  }
+
+  .wrapper a:hover {
+    text-decoration: none;
+  }
+
+  wrapper h4 {
+    margin-left: 5px;
+  }
+
+  .wrapper {
+    font: 14px/20px Verdana, sans;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f7ffe2;
+    border: 3px double #a9b097;
+  }
+
+  .demo {
+    width: 600px;
+    padding: 1px;
+    background: #fec7b1;
+  }
+
+  .demo.div .reactable {
+    width: 588px;
+    margin: 1px;
+    padding: 5px;
+    background: #f6ffbe;
+  }
+
+  .demo.div .reactable .reactable-content {
+    position: absolute;
+    z-index: 1;
+    padding: 5px;
+    background: #333;
+    color: #f6ffbe;
+  }
+&lt;/style&gt;
+
+&lt;div class="wrapper"&gt;
+  &lt;h1&gt;jQuery.React Demo&lt;/h1&gt;
+  &lt;p&gt;React can work with any HTML tag that is displayed as "block".&lt;/p&gt;
+  &lt;h3&gt;DIV example:&lt;/h3&gt;
+  &lt;div class="demo div"&gt;
+    &lt;h4&gt;Default FX&lt;/h4&gt;
+    &lt;div class="reactable default"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+    &lt;/div&gt;
+    &lt;div class="reactable default"&gt;
+      &lt;div class="reactable-content"&gt;Reactable content.&lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+    &lt;h4&gt;Slide FX&lt;/h4&gt;
+    &lt;div class="reactable slide"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;a href="#"&gt;A Link&lt;/a&gt; |
+        &lt;a href="#"&gt;A Link&lt;/a&gt; |
+        &lt;a href="#"&gt;A Link&lt;/a&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+    &lt;div class="reactable slide"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+  $(function() {
+    $('.reactable.default').react();
+    $('.reactable.slide').react({
+      fx_type: 'slide',
+      origin:  'right'
+    });
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Download the <a href="https://raw.github.com/ducknorris/react/master/dist/react.min.js">production version</a> or the <a href="https://raw.github.com/ducknorris/react/master/dist/react.js">development version</a>.</p>
+
+<p>In your web page:</p>
+
+<pre><code>&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="react.min.js"&gt;&lt;/script&gt;
+&lt;style type="text/css"&gt;
+  body {
+    font: 14px/20px Verdana, sans;
+    padding: 0;
+    margin: 0;
+    background: #fbfff0;
+  }
+
+  .wrapper a {
+    color: #fff;
+  }
+
+  .wrapper a:hover {
+    text-decoration: none;
+  }
+
+  wrapper h4 {
+    margin-left: 5px;
+  }
+
+  .wrapper {
+    font: 14px/20px Verdana, sans;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f7ffe2;
+    border: 3px double #a9b097;
+  }
+
+  .demo {
+    width: 600px;
+    padding: 1px;
+    background: #fec7b1;
+  }
+
+  .demo.div .reactable {
+    width: 588px;
+    margin: 1px;
+    padding: 5px;
+    background: #f6ffbe;
+  }
+
+  .demo.div .reactable .reactable-content {
+    position: absolute;
+    z-index: 1;
+    padding: 5px;
+    background: #333;
+    color: #f6ffbe;
+  }
+&lt;/style&gt;
+
+&lt;div class="wrapper"&gt;
+  &lt;h1&gt;jQuery.React Demo&lt;/h1&gt;
+  &lt;p&gt;React can work with any HTML tag that is displayed as "block".&lt;/p&gt;
+  &lt;h3&gt;DIV example:&lt;/h3&gt;
+  &lt;div class="demo div"&gt;
+    &lt;h4&gt;Default FX&lt;/h4&gt;
+    &lt;div class="reactable default"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+    &lt;/div&gt;
+    &lt;div class="reactable default"&gt;
+      &lt;div class="reactable-content"&gt;Reactable content.&lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+    &lt;h4&gt;Slide FX&lt;/h4&gt;
+    &lt;div class="reactable slide"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;a href="#"&gt;A Link&lt;/a&gt; |
+        &lt;a href="#"&gt;A Link&lt;/a&gt; |
+        &lt;a href="#"&gt;A Link&lt;/a&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+    &lt;div class="reactable slide"&gt;
+      &lt;div class="reactable-content"&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+        &lt;button&gt;A Button&lt;/button&gt;
+      &lt;/div&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+  $(function() {
+    $('.reactable.default').react();
+    $('.reactable.slide').react({
+      fx_type: 'slide',
+      origin:  'right'
+    });
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p><em>(Coming soon)</em></p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p><em>(Coming soon)</em></p>
+
+<h2>
+<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<p><em>(Nothing yet)</em></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
