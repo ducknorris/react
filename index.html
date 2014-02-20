@@ -1,1 +1,194 @@
-demo/index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>jQuery React by ducknorris</title>
+
+    <script src="http://jquery-react.s3.amazonaws.com/jquery.js"></script>
+    <script type="text/javascript" src="http://jquery-react.s3.amazonaws.com/react.min.js"></script>
+    <style type="text/css">
+      .wrapper {
+        font: 14px/20px Verdana, sans;
+        width: 600px;
+        margin-bottom: 20px;
+      }
+
+      .wrapper a {
+        color: #fff;
+      }
+
+      .wrapper a:hover {
+        text-decoration: none;
+      }
+
+      .wrapper h4 {
+        margin-left: 10px;
+      }
+
+      .demo {
+        width: 600px;
+        padding: 1px;
+        background: #a3dafe;
+        border: 1px solid #fff;
+      }
+
+      .demo .reactable {
+        width: 588px;
+        margin: 1px;
+        padding: 5px;
+        background: #b2e6ff;
+      }
+
+      .demo .reactable .reactable-content {
+        position: absolute;
+        width: 220px;
+        padding: 5px;
+        background: #333;
+        color: #b2e1ff;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .demo ul {
+        list-style: none inside;
+        margin: 0;
+        padding: 0;
+      }
+
+      .demo ul li {
+        list-style: none inside;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>jQuery React</h1>
+        <h2>jQuery plugin that will display custom HTML element on hover over an observed target.</h2>
+        <a href="https://github.com/ducknorris/react" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <div class="wrapper">
+            <div class="demo">
+              <h4>Default FX</h4>
+              <div class="reactable default">
+                <div class="reactable-content">
+                  <button>A Button</button>
+                  <button>A Button</button>
+                  <button>A Button</button>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+              </div>
+              <div class="reactable default">
+                <div class="reactable-content">Reactable content.</div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </div>
+
+              <h4>Slide FX (from the right)</h4>
+              <div class="reactable slide right">
+                <div class="reactable-content">
+                  <a href="#">A Link</a> |
+                  <a href="#">A Link</a> |
+                  <a href="#">A Link</a>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </div>
+              <div class="reactable slide right">
+                <div class="reactable-content">
+                  <button>A Button</button>
+                  <button>A Button</button>
+                  <button>A Button</button>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </div>
+
+              <h4>Slide FX (from the left)</h4>
+              <ul>
+                <li class="reactable slide left">
+                  <div class="reactable-content">
+                    <a href="#">A Link</a> |
+                    <a href="#">A Link</a> |
+                    <a href="#">A Link</a>
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                </li>
+                <li class="reactable slide left">
+                  <div class="reactable-content">
+                    <button>A Button</button>
+                    <button>A Button</button>
+                    <button>A Button</button>
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                </li>
+              </ul>
+            </div>
+          </div>
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Download the <a href="https://raw.github.com/ducknorris/react/master/dist/react.min.js">production version</a> or the <a href="https://raw.github.com/ducknorris/react/master/dist/react.js">development version</a>.</p>
+
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/ducknorris/react/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ducknorris/react/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/ducknorris/react"></a> is maintained by <a href="https://github.com/ducknorris">ducknorris</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+          $('.reactable.default').react();
+          $('.reactable.slide.right').react({
+            fx_type: 'slide',
+            origin:  'right'
+          });
+          $('.reactable.slide.left').react({
+            fx_type: 'slide',
+            origin:  'left'
+          });
+        });
+      </script>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44094152-3', 'ducknorris.github.io');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>

@@ -5,31 +5,24 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="react.min.js"></script>
     <style type="text/css">
-      body {
-        font: 14px/20px Verdana, sans;
-        padding: 0;
-        margin: 0;
-        background: #fbfff0;
-      }
-
-      a {
-        color: #fff;
-      }
-
-      a:hover {
-        text-decoration: none;
-      }
-
-      h4 {
-        margin-left: 5px;
-      }
-
       .wrapper {
+        font: 14px/20px Verdana, sans;
         width: 600px;
-        margin: 20px auto;
         padding: 20px;
         background: #feb7a2;
         border: 3px double #a9b097;
+      }
+
+      .wrapper a {
+        color: #fff;
+      }
+
+      .wrapper a:hover {
+        text-decoration: none;
+      }
+
+      .wrapper h4 {
+        margin-left: 5px;
       }
 
       .demo {
@@ -72,7 +65,7 @@
     <div class="wrapper">
       <h1>jQuery.React Demo</h1>
       <p>React can work with any HTML tag that is displayed as "block".</p>
-      <div class="demo div">
+      <div class="demo">
         <h4>Default FX</h4>
         <div class="reactable default">
           <div class="reactable-content">
