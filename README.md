@@ -1,4 +1,4 @@
-# React [![Build Status](https://secure.travis-ci.org/ducknorris/react.png)](http://travis-ci.org/ducknorris/react)
+# React [![Build Status](https://travis-ci.org/ducknorris/react.png?branch=master)](https://travis-ci.org/ducknorris/react)
 
 jQuery plugin that will display custom HTML element on hover over an designated target.
 
