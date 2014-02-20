@@ -118,7 +118,7 @@ In your web page:
 </html>
 ```
 
-[See demo at this link][https://github.com/ducknorris/react].
+[See demo at this link](https://github.com/ducknorris/react).
 
 ## Documentation
 _(Coming soon)_
