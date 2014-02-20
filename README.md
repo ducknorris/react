@@ -118,13 +118,9 @@ In your web page:
 </html>
 ```
 
-[See demo at this link](https://github.com/ducknorris/react)
+[See demo at this link](http://ducknorris.github.io/react/)
 
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
 
 ## Release History
-_(Nothing yet)_
+
+* 0.1.0 - February 20, 2014
