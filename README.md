@@ -1,5 +1,7 @@
 # React [![Build Status](https://travis-ci.org/ducknorris/react.png?branch=master)](https://travis-ci.org/ducknorris/react)
 
+[![Code Climate](https://codeclimate.com/github/ducknorris/react.png)](https://codeclimate.com/github/ducknorris/react)
+
 jQuery plugin that will display custom HTML element on hover over an designated target.
 
 ## Getting Started
