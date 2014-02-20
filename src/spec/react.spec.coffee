@@ -26,7 +26,6 @@ describe "jQuery#react", ->
       """
     $("body").append(fixtures)
     @elems = $('.reactable', $(fixtures))
-    @react = $('.reac', $(fixtures)).first()
 
   afterEach ->
     $("body").empty()
@@ -35,22 +34,33 @@ describe "jQuery#react", ->
     expect(@elems.react()).toEqual @elems
 
   it "should be reactable", ->
-    expect(@elems.react().hasClass('react')).toBeTrue
+    $('.reactable').react()
+    expect($('.reactable').length).toBe $('.react').length
 
   it "should display .reactable-content", ->
-    @react.trigger('mouseover')
-    expect(@react.hasClass('v')).toBeTrue
+    $('.reactable').react()
+    reactEl = $('.reactable:first')
+    reactEl.trigger('mouseover')
+    expect($('.reactable-content', reactEl).is(':visible')).toBe true
+
+  it "should hide .reactable-content", ->
+    reactEl = $('.reactable:first')
+    reactEl.trigger('mouseover')
+    reactEl.trigger('mouseout')
+    expect($('.reactable-content', reactEl).is(':visible')).toBe true
 
 describe "jQuery.react", ->
-
   it "should have default options", ->
-    expect($.react().fx_type).toBe 'slide'
-    expect($.react().direction).toBe 'right'
+    reacted = $.react()
+    expect(reacted.fx_type).toBe 'default'
+    expect(reacted.direction).toBe undefined
 
   it "should have options:direction overriden", ->
-    expect($.react(fx_type: 'slide', direction: 'left').fx_type).toBe 'slide'
-    expect($.react(fx_type: 'slide', direction: 'left').direction).toBe 'left'
+    reacted = $.react(fx_type: 'slide', direction: 'left')
+    expect(reacted.fx_type).toBe 'slide'
+    expect(reacted.direction).toBe 'left'
 
   it "should have options:fx_type overriden", ->
-    expect($.react(fx_type: 'fade').fx_type).toBe 'fade'
-    expect($.react(fx_type: 'fade').direction).toBe 'right'
+    reacted = $.react(fx_type: 'fade')
+    expect(reacted.fx_type).toBe 'fade'
+    expect(reacted.direction).toBe undefined

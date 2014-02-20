@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery.React Demo</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="react.min.js"></script>
+    <style type="text/css">
+      body {
+        font: 14px/20px Verdana, sans;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      .demo {
+        width: 600px;
+        padding: 1px;
+        background: #fec7b1;
+      }
+
+      .demo.div .reactable {
+        width: 588px;
+        margin: 1px;
+        padding: 5px;
+        background: #f6ffbe;
+      }
+
+      .demo.div .reactable .reactable-content {
+        position: absolute;
+        z-index: 1;
+        padding: 5px;
+        background: #333;
+        color: #f6ffbe;;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery.React Demo</h1>
+    <p>React can work with any HTML tag that is displayed as "block".</p>
+    <h3>DIV example:</h3>
+    <div class="demo div">
+      <div class="reactable">
+        <div class="reactable-content">
+          <button>A Button</button>
+          <button>A Button</button>
+          <button>A Button</button>
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+      </div>
+      <div class="reactable">
+        <div class="reactable-content">
+          <a href="#">A Link</a> |
+          <a href="#">A Link</a> |
+          <a href="#">A Link</a>
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+      </div>
+      <div class="reactable">
+        <div class="reactable-content">Reactable content.</div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+      </div>
+      <div class="reactable">
+        <div class="reactable-content">Reactable content.</div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+      </div>
+    </div>
+  </body>
+</html>
