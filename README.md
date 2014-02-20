@@ -1,6 +1,6 @@
 # React [![Build Status](https://secure.travis-ci.org/ducknorris/react.png)](http://travis-ci.org/ducknorris/react)
 
-jQuery plugin that will display custom HTML element on hover over an observed target.
+jQuery plugin that will display custom HTML element on hover over an designated target.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
