@@ -26,9 +26,7 @@ describe "jQuery#react", ->
       """
     $("body").append(fixtures)
     @elems = $('.reactable', $(fixtures))
-
-    @addMatchers toBeReactable: (el) ->
-      return el.hasClass('react')
+    @react = $('.reac', $(fixtures)).first()
 
   afterEach ->
     $("body").empty()
@@ -36,40 +34,23 @@ describe "jQuery#react", ->
   it "should be chainable", ->
     expect(@elems.react()).toEqual @elems
 
-  # it "should be reactable", ->
-  #   expect(@elems.react()).toBeReactable()
-
-# describe "jQuery.react", ->
-
-  # it "should be reactable", ->
-    # expect($.react()).toBe "reactable."
-    # expect($.react(fx_type: "slide")).toBe "slide"
-
-describe ":react selector", ->
-
-  beforeEach ->
-    fixtures =
-      """
-      <div id="qunit-fixture">
-        <div class="reactable">
-          <div class="reactable-content">
-            First reactable content.
-          </div>
-          Content for first reactable content.
-        </div>
-        <div class="reactable">
-          <div class="reactable-content">
-            Second reactable content.
-          </div>
-          Content for second reactable content.
-        </div>
-      </div>
-      """
-    $("body").append(fixtures)
-    @elems = $('.reactable', $(fixtures))
-
-  afterEach ->
-    $("body").empty()
-
   it "should be reactable", ->
-    expect(@elems.filter(":react").get()).toEqual @elems.get()
+    expect(@elems.react().hasClass('react')).toBeTrue
+
+  it "should display .reactable-content", ->
+    @react.trigger('mouseover')
+    expect(@react.hasClass('v')).toBeTrue
+
+describe "jQuery.react", ->
+
+  it "should have default options", ->
+    expect($.react().fx_type).toBe 'slide'
+    expect($.react().direction).toBe 'right'
+
+  it "should have options:direction overriden", ->
+    expect($.react(fx_type: 'slide', direction: 'left').fx_type).toBe 'slide'
+    expect($.react(fx_type: 'slide', direction: 'left').direction).toBe 'left'
+
+  it "should have options:fx_type overriden", ->
+    expect($.react(fx_type: 'fade').fx_type).toBe 'fade'
+    expect($.react(fx_type: 'fade').direction).toBe 'right'

@@ -7,6 +7,13 @@
 (function($) {
   $.fn.react = function() {
     return this.each(function(i) {
+      var context;
+      context = $(this);
+      $(this).hover((function() {
+        $('.reactable-content', context).addClass('v');
+      }), function() {
+        $('.reactable-content', context).removeClass('v');
+      });
       return $(this).addClass('react');
     });
   };
@@ -14,11 +21,8 @@
     options = $.extend({}, $.react.options, options);
     return options;
   };
-  $.react.options = {
+  return $.react.options = {
     fx_type: "slide",
     direction: "right"
-  };
-  return $.expr[":"].react = function(elem) {
-    return $(elem).hasClass('react');
   };
 })(jQuery);

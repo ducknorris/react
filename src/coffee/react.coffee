@@ -10,12 +10,19 @@
 
   # Collection method.
   $.fn.react = ->
-    return @.each (i)->
+    return @.each (i) ->
       # Do something reactable to each selected element.
+      context = $(@)
+      $(@).hover (->
+        $('.reactable-content', context).addClass('v')
+        return
+      ), ->
+        $('.reactable-content', context).removeClass('v')
+        return
       $(@).addClass('react')
 
   # Static method.
-  $.react = (options)->
+  $.react = (options) ->
     # Override default options with passed-in options.
     options = $.extend({}, $.react.options, options)
     # Return something reactable.
@@ -25,10 +32,5 @@
   $.react.options =
     fx_type:   "slide"
     direction: "right"
-
-  # Custom selector.
-  $.expr[":"].react = (elem)->
-    # Is this element reactable?
-    return $(elem).hasClass('react')
 
 )(jQuery)

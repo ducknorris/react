@@ -15,7 +15,7 @@ In your web page:
 <script src="dist/react.min.js"></script>
 <script>
 jQuery(function($) {
-  $.reactable();
+  $('.reactable').reactable();
 });
 </script>
 ```
