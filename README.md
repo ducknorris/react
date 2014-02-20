@@ -1,4 +1,4 @@
-# React [![Build Status](https://travis-ci.org/ducknorris/react.png?branch=master)](https://travis-ci.org/ducknorris/react)
+# React [![Build Status](https://travis-ci.org/ducknorris/react.png)](https://travis-ci.org/ducknorris/react)
 
 [![Code Climate](https://codeclimate.com/github/ducknorris/react.png)](https://codeclimate.com/github/ducknorris/react)
 
