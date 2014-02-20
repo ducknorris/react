@@ -53,14 +53,14 @@ describe "jQuery.react", ->
   it "should have default options", ->
     reacted = $.react()
     expect(reacted.fx_type).toBe 'default'
-    expect(reacted.direction).toBe undefined
+    expect(reacted.origin).toBe undefined
 
-  it "should have options:direction overriden", ->
-    reacted = $.react(fx_type: 'slide', direction: 'left')
+  it "should have options:origin overriden", ->
+    reacted = $.react(fx_type: 'slide', origin: 'left')
     expect(reacted.fx_type).toBe 'slide'
-    expect(reacted.direction).toBe 'left'
+    expect(reacted.origin).toBe 'left'
 
   it "should have options:fx_type overriden", ->
     reacted = $.react(fx_type: 'fade')
     expect(reacted.fx_type).toBe 'fade'
-    expect(reacted.direction).toBe undefined
+    expect(reacted.origin).toBe undefined

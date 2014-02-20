@@ -24,7 +24,6 @@
         left: '100%',
         marginTop: '-' + elem.css('paddingTop'),
         marginLeft: '-' + reactableElem.outerWidth() + 'px',
-        width: 'auto',
         height: elem.height(),
         overflow: 'hidden',
         whiteSpace: 'nowrap',
@@ -41,20 +40,36 @@
     this.reactWithSlide = function() {
       var reactableElem;
       reactableElem = $('.reactable-content', elem);
-      reactableElem.css({
-        marginLeft: 0,
-        display: 'block'
-      });
-      elem.hover(function() {
-        reactableElem.animate({
-          width: 'auto',
-          marginLeft: '-' + reactableElem.outerWidth() + 'px'
-        }, 300);
-      }, function() {
-        reactableElem.animate({
-          marginLeft: 0
-        }, 50);
-      });
+      if (options.origin === 'right') {
+        reactableElem.css({
+          marginLeft: 0,
+          display: 'block'
+        });
+        elem.hover(function() {
+          reactableElem.animate({
+            marginLeft: '-' + reactableElem.outerWidth() + 'px'
+          }, 300);
+        }, function() {
+          reactableElem.animate({
+            marginLeft: 0
+          }, 50);
+        });
+      } else if (options.origin === 'left') {
+        reactableElem.css({
+          marginLeft: '-' + reactableElem.outerWidth() + 'px',
+          left: 0,
+          display: 'block'
+        });
+        elem.hover(function() {
+          reactableElem.animate({
+            marginLeft: 0
+          }, 300);
+        }, function() {
+          reactableElem.animate({
+            marginLeft: '-' + reactableElem.outerWidth() + 'px'
+          }, 50);
+        });
+      }
     };
     obj.setupSizeAndPosition();
     if (options.fx_type === 'default') {

@@ -23,7 +23,6 @@
         left: '100%'
         marginTop: '-' + elem.css('paddingTop')
         marginLeft: '-' + reactableElem.outerWidth() + 'px'
-        width: 'auto'
         height: elem.height()
         overflow: 'hidden'
         whiteSpace: 'nowrap'
@@ -41,20 +40,35 @@
 
     @reactWithSlide = () ->
       reactableElem = $('.reactable-content', elem)
-      reactableElem.css
-        marginLeft: 0
-        display: 'block'
-      elem.hover ->
-        reactableElem.animate
-          width: 'auto'
-          marginLeft: '-' + reactableElem.outerWidth() + 'px'
-        , 300
-        return
-      , ->
-        reactableElem.animate
+      if options.origin == 'right'
+        reactableElem.css
           marginLeft: 0
-        , 50
-        return
+          display: 'block'
+        elem.hover ->
+          reactableElem.animate
+            marginLeft: '-' + reactableElem.outerWidth() + 'px'
+          , 300
+          return
+        , ->
+          reactableElem.animate
+            marginLeft: 0
+          , 50
+          return
+      else if options.origin == 'left'
+        reactableElem.css
+          marginLeft: '-' + reactableElem.outerWidth() + 'px'
+          left: 0
+          display: 'block'
+        elem.hover ->
+          reactableElem.animate
+            marginLeft: 0
+          , 300
+          return
+        , ->
+          reactableElem.animate
+            marginLeft: '-' + reactableElem.outerWidth() + 'px'
+          , 50
+          return
       return
 
     obj.setupSizeAndPosition()
