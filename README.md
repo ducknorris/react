@@ -134,6 +134,8 @@ Thanks to our [contributors](https://github.com/ducknorris/react/graphs/contribu
 
 ## Release History
 
+* 0.4.0 - February 21, 2014
+
 * 0.3.0 - February 21, 2014
 
 * 0.2.0 - February 21, 2014
