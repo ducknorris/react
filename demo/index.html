@@ -66,6 +66,25 @@
         list-style: none inside;
         margin: 0;
       }
+
+      .demo table {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .demo td {
+        position: relative;
+      }
+
+      .demo td {
+        margin: 1px;
+        padding: 5px;
+        background: #f6ffbe;
+      }
+
+      .demo tr.reactable td:last-child {
+        width: 100px;
+      }
     </style>
   </head>
   <body>
@@ -104,6 +123,58 @@
           </div>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </div>
+
+        <h4>Slide FX (from the right) w/ table</h4>
+        <table>
+          <tr class="reactable slide right">
+            <td>
+              Lorem
+            </td>
+            <td>
+              Ipsum
+            </td>
+            <td>
+              <div class="reactable-content">
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a>
+              </div>
+              Actions
+            </td>
+          </tr>
+          <tr class="reactable slide right">
+            <td>
+              Lorem
+            </td>
+            <td>
+              Ipsum
+            </td>
+            <td>
+              <div class="reactable-content">
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a>
+              </div>
+              Actions
+            </td>
+          </tr>
+          <tr class="reactable default">
+            <td>
+              Lorem
+            </td>
+            <td>
+              Ipsum
+            </td>
+            <td>
+              <div class="reactable-content">
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a> |
+                <a href="#">A Link</a>
+              </div>
+              Actions
+            </td>
+          </tr>
+        </table>
 
         <h4>Slide FX (from the left)</h4>
         <ul>
