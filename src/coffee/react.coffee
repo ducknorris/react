@@ -45,11 +45,13 @@
           marginLeft: 0
           display: 'block'
         elem.hover ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           , 300
           return
         , ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: 0
           , 50
@@ -60,11 +62,13 @@
           left: 0
           display: 'block'
         elem.hover ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: 0
           , 300
           return
         , ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           , 50

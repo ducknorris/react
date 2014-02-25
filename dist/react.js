@@ -1,5 +1,5 @@
 /* ===========================================================
-# React - v0.4.0
+# React - v0.5.0
 # ==============================================================
 # Copyright (c) 2014 Catalin Ilinca
 # Licensed MIT.
@@ -46,10 +46,12 @@
           display: 'block'
         });
         elem.hover(function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           }, 300);
         }, function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
           }, 50);
@@ -61,10 +63,12 @@
           display: 'block'
         });
         elem.hover(function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
           }, 300);
         }, function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           }, 50);
