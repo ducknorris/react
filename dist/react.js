@@ -11,7 +11,9 @@
     elem = $(element);
     obj = this;
     options = $.extend({
-      fx_type: 'default'
+      fx_type: 'default',
+      amination_speed_in: 300,
+      amination_speed_out: 50
     }, options);
     this.setupSizeAndPosition = function() {
       var reactableElem;
@@ -49,12 +51,12 @@
           reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
-          }, 300);
+          }, options.amination_speed_in);
         }, function() {
           reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
-          }, 50);
+          }, options.amination_speed_out);
         });
       } else if (options.origin === 'left') {
         reactableElem.css({
@@ -66,12 +68,12 @@
           reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
-          }, 300);
+          }, options.amination_speed_in);
         }, function() {
           reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
-          }, 50);
+          }, options.amination_speed_out);
         });
       }
     };
@@ -93,6 +95,8 @@
     return options;
   };
   return $.react.options = {
-    fx_type: 'default'
+    fx_type: 'default',
+    amination_speed_in: 300,
+    amination_speed_out: 50
   };
 })(jQuery);
