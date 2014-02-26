@@ -47,11 +47,13 @@
           marginLeft: 0
           display: 'block'
         elem.hover ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           , options.amination_speed_in
           return
         , ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: 0
           , options.amination_speed_out
@@ -62,11 +64,13 @@
           left: 0
           display: 'block'
         elem.hover ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: 0
           , options.amination_speed_in
           return
         , ->
+          reactableElem.stop false, false
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           , options.amination_speed_out

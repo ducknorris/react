@@ -48,10 +48,12 @@
           display: 'block'
         });
         elem.hover(function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           }, options.amination_speed_in);
         }, function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
           }, options.amination_speed_out);
@@ -63,10 +65,12 @@
           display: 'block'
         });
         elem.hover(function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: 0
           }, options.amination_speed_in);
         }, function() {
+          reactableElem.stop(false, false);
           reactableElem.animate({
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
           }, options.amination_speed_out);
