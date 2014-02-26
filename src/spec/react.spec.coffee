@@ -54,6 +54,8 @@ describe "jQuery.react", ->
     reacted = $.react()
     expect(reacted.fx_type).toBe 'default'
     expect(reacted.origin).toBe undefined
+    expect(reacted.amination_speed_in).toBe 300
+    expect(reacted.amination_speed_out).toBe 50
 
   it "should have options:origin overriden", ->
     reacted = $.react(fx_type: 'slide', origin: 'left')
@@ -64,3 +66,11 @@ describe "jQuery.react", ->
     reacted = $.react(fx_type: 'fade')
     expect(reacted.fx_type).toBe 'fade'
     expect(reacted.origin).toBe undefined
+
+  it "should have options:amination_speed_in overriden", ->
+    reacted = $.react(amination_speed_in: 500)
+    expect(reacted.amination_speed_in).toBe 500
+    
+  it "should have options:amination_speed_out overriden", ->
+    reacted = $.react(amination_speed_out: 100)
+    expect(reacted.amination_speed_out).toBe 100
