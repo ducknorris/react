@@ -112,7 +112,9 @@ In your web page:
         $('.reactable.default').react();
         $('.reactable.slide').react({
           fx_type: 'slide',
-          origin:  'right'
+          origin:  'right',
+          amination_speed_in: 300,
+          amination_speed_out: 50
         });
       });
     </script>
