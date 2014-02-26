@@ -11,7 +11,9 @@
     elem    = $(element)
     obj     = @
     options = $.extend
-      fx_type: 'default'
+      fx_type: 'default',
+      amination_speed_in: 300,
+      amination_speed_out: 50
     , options
 
     @setupSizeAndPosition = () ->
@@ -47,12 +49,12 @@
         elem.hover ->
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
-          , 300
+          , options.amination_speed_in
           return
         , ->
           reactableElem.animate
             marginLeft: 0
-          , 50
+          , options.amination_speed_out
           return
       else if options.origin == 'left'
         reactableElem.css
@@ -62,12 +64,12 @@
         elem.hover ->
           reactableElem.animate
             marginLeft: 0
-          , 300
+          , options.amination_speed_in
           return
         , ->
           reactableElem.animate
             marginLeft: '-' + reactableElem.outerWidth() + 'px'
-          , 50
+          , options.amination_speed_out
           return
       return
 
@@ -99,6 +101,8 @@
 
   # Static method default options.
   $.react.options =
-    fx_type: 'default'
+    fx_type: 'default',
+    amination_speed_in: 300,
+    amination_speed_out: 50
 
 )(jQuery)
