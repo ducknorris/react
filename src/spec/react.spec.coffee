@@ -44,10 +44,11 @@ describe "jQuery#react", ->
     expect($('.reactable-content', reactEl).is(':visible')).toBe true
 
   it "should hide .reactable-content", ->
+    $('.reactable').react()
     reactEl = $('.reactable:first')
     reactEl.trigger('mouseover')
     reactEl.trigger('mouseout')
-    expect($('.reactable-content', reactEl).is(':visible')).toBe true
+    expect($('.reactable-content', reactEl).is(':visible')).toBe false
 
 describe "jQuery.react", ->
   it "should have default options", ->
@@ -70,7 +71,7 @@ describe "jQuery.react", ->
   it "should have options:amination_speed_in overriden", ->
     reacted = $.react(amination_speed_in: 500)
     expect(reacted.amination_speed_in).toBe 500
-    
+
   it "should have options:amination_speed_out overriden", ->
     reacted = $.react(amination_speed_out: 100)
     expect(reacted.amination_speed_out).toBe 100
