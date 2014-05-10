@@ -2,7 +2,7 @@
   "name": "react",
   "title": "React",
   "description": "jQuery plugin that will display custom HTML element on hover over an observed target.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "homepage": "http://ducknorris.github.io/react",
   "author": {
     "name": "Catalin Ilinca",
@@ -27,7 +27,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "jquery": "*"
+    "jquery": ">= 1.9.0"
   },
   "devDependencies": {
     "grunt-bump": "~0.0.11",
