@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/ducknorris/react.png)](https://codeclimate.com/github/ducknorris/react)
 
-jQuery plugin that will display custom HTML element on hover over an designated target.
+jQuery plugin that, on hover, will display custom HTML element over an designated target.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
